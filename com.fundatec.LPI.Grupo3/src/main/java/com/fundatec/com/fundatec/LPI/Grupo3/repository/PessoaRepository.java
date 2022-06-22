@@ -1,2 +1,4 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.repository;public interface PessoaRepository {
+package com.fundatec.com.fundatec.LPI.Grupo3.repository;
+
+public interface PessoaRepository {
 }

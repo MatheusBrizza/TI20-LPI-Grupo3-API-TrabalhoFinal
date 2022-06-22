@@ -1,4 +1,4 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.controller;
+package com.fundatec.com.fundatec.LPI.Grupo3.model;
 
 import com.fundatec.com.fundatec.LPI.Grupo3.model.Pessoa;
 
