@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class Pessoa {
     private String nome;
-    private Integer cpf;
-    private Integer cnpj;
+    private String cpf;
+    private String cnpj;
     private Integer inscEstadual;
     private Integer rg;
     private String Endereco;
