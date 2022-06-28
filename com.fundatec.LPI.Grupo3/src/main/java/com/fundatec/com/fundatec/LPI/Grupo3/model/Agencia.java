@@ -22,7 +22,7 @@ public class Agencia {
     @Column( name = "codigo", unique = true)
     private String codigo;
 
-    @OneToOne(mappedBy = "agencia", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "Agencia", cascade = CascadeType.ALL)
     private Endereco endereco;
 
     @OneToMany(mappedBy = agencia, cascade = CascadeType.ALL)
