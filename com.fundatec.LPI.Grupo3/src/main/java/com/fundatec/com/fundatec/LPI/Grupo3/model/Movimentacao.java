@@ -14,7 +14,7 @@ public class Movimentacao {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "data");
+    @Column(name = "data")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/mm/yyyy")
     private Calendar data;
 

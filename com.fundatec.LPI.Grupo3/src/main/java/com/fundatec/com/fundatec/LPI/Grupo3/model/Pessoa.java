@@ -19,7 +19,6 @@ public class Pessoa {
     @NotNull
     @Column(name = "nome")
     private String nome;
-<<<<<<< HEAD
 
     @NotNull
     @Column (name ="cpf")
@@ -31,10 +30,6 @@ public class Pessoa {
 
     @NotNull
     @Column (name = "inscricao_Estadual")
-=======
-    private String cpf;
-    private String cnpj;
->>>>>>> f42d17ec383a470d2ab2c56214a236f2470a7e40
     private Integer inscEstadual;
 
     @NotNull

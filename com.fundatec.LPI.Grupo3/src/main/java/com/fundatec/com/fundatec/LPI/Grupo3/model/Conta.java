@@ -17,6 +17,10 @@ public class Conta {
     private String numero;
 
     @NotNull
+    @Column(name = "senha", unique = true)
+    private String senha;
+
+    @NotNull
     @Column(name = "saldo", columnDefinition = "Decimal(10,2) default '100.00'")
     private Double saldo;
 
@@ -24,8 +28,6 @@ public class Conta {
     @ManyToOne
     @JoinColumn(name = "agencia_id")
     private Agencia agencia;
-
-
     @NotNull
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
