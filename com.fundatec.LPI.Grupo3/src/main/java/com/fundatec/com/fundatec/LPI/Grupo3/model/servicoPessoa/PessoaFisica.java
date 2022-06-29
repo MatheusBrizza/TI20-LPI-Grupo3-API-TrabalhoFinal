@@ -15,4 +15,12 @@ public class PessoaFisica extends Pessoa {
     @Size(min = 11, max = 11)
     @Column(name = "cpf", unique = true)
     private String cpf;
+
+
+    @NotNull
+    @Size(min = 10, max = 10)
+    @Column (name = "rg")
+    private Integer rg;
+
+
 }
