@@ -1,6 +1,6 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.model;
+package com.fundatec.com.fundatec.LPI.Grupo3.model.servicoPessoa;
 
-import com.fundatec.com.fundatec.LPI.Grupo3.model.Pessoa;
+import com.fundatec.com.fundatec.LPI.Grupo3.model.servicoPessoa.Pessoa;
 
 public class Profissional extends Pessoa {
     private Pessoa pessoa;

@@ -1,4 +1,4 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.model;
+package com.fundatec.com.fundatec.LPI.Grupo3.model.servicoPessoa;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

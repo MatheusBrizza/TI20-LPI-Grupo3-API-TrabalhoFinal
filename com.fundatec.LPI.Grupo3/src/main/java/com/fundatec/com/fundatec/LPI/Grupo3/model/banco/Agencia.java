@@ -1,4 +1,6 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.model;
+package com.fundatec.com.fundatec.LPI.Grupo3.model.banco;
+
+import com.fundatec.com.fundatec.LPI.Grupo3.model.servicoPessoa.Endereco;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
