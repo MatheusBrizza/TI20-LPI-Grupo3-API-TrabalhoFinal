@@ -48,5 +48,5 @@ public class Pessoa {
 
     @NotNull
     @Column(name = "Status")
-    private String Status;
+    private Boolean status;
 }
