@@ -21,28 +21,9 @@ public class Pessoa {
     private String nome;
 
     @NotNull
-    @Column (name ="cpf")
-    private Integer cpf;
-
-    @NotNull
-    @Column (name ="cnpj")
-    private Integer cnpj;
-
-    @NotNull
-    @Column (name = "inscricao_Estadual")
-    private Integer inscEstadual;
-
-    @NotNull
-    @Column (name = "rg")
-    private Integer rg;
-
-    @NotNull
     @Column (name = "enderco")
-    private String Endereco;
 
-    @NotNull
-    @Column (name = "cep")
-    private Integer cep;
+    private Endereco Endereco;
 
     @NotNull
     @Column (name = "sexo")
@@ -68,16 +49,4 @@ public class Pessoa {
     @NotNull
     @Column(name = "Status")
     private String Status;
-
-    @NotNull
-    @Column (name = "cidade")
-    private id_cidade id_cidade;
-
-    @NotNull
-    @Column(name = "uf")
-    private id_uf id_uf;
-
-    @NotNull
-    @Column(name = "bairro")
-    private id_bairro id_bairro;
 }

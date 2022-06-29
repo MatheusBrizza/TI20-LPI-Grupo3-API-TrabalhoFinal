@@ -15,4 +15,11 @@ public class ClientePessoaJuridica extends Pessoa {
     @Size(min = 14, max = 14)
     @Column(name = "cnpj", unique = true)
     private String cnpj;
+
+    @NotNull
+    @Size(min = 10, max = 12)
+    @Column (name = "inscricao_Estadual")
+    private Integer inscEstadual;
+
+
 }
