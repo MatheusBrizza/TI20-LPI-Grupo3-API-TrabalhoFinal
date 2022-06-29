@@ -1,4 +1,4 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model;
+package com.fundatec.com.fundatec.LPI.Grupo3.banco.model;
 
 import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Pessoa;
 
@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @DiscriminatorValue("F")
-public class PessoaFisica extends Pessoa {
+public class ClientePessoaFisica extends Pessoa {
     @NotNull
     @Size(min = 11, max = 11)
     @Column(name = "cpf", unique = true)
