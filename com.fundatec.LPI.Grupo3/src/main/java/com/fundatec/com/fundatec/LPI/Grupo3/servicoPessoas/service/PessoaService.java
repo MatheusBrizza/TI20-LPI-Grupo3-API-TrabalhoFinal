@@ -1,4 +1,5 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.service;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.PessoaRepository;
 import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Pessoa;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -6,30 +7,41 @@ import java.util.List;
 
 public class PessoaService {
 
-    private final pessoaRepository repository;
+    private final PessoaRepository repository;
 
-    public pessoaService(pessoaRepository repository) {
+    public PessoaServiceImpl(PessoaRepository repository) {
         this.repository = repository;
-
     }
-    @PostMapping
-    public Pessoa salvar(Pessoa pessoa) {
+
+    @Override
+    public List<Pessoa> get() {
+        return repository.findAll();
+    }
+
+    @Override
+    public Optional<Pessoa> get(Long id) {
+        return repository.findById(id);
+    }
+
+    @Override
+    public Pessoa save(Pessoa pessoa) {
         return repository.save(pessoa);
     }
 
-    // Buscar por nome
-    public Optional <Pessoa> findByNome(String nome) {
-        return repository.findByNome(nome);
+    @Override
+    public Optional<Pessoa> update(Pessoa pessoa) {
+                    return repository.save(pessoa);
+                });
     }
-    //Buscar por Profissão
-    public Optional <Pessoa> findByProfissao(String profissao) {
-        return repository.findByProfissao(profissao);
-    }
-    public Optional <Pessoa> findByStatus(Boolean status) {
-        return repository.findByStatus(status);
-    }
-    //Buscar todos//
-    public Iterable<Pessoa> findAll() {
-        return repository.findAll();
+
+    @Override
+    public void deleteByID(Long id) {
+        Optional<Pessoa> pessoa = get(id);
+
+        if(!pessoa.isPresent()) {
+            repository.deleteById(id);
+        } else {
+            throw new PessoaNotFoundException(id);
+        }
     }
 }
