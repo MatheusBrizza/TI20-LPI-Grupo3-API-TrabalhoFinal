@@ -19,33 +19,23 @@ public class PessoaService {
 
         return repository.findById(id);
     }
-}
-    @Override
-    public List<Pessoa> get() {
+    public Iterable<Pessoa> findAll() {
 
     return repository.findAll();
     }
 
-    @Override
     public Pessoa save(Pessoa pessoa) {
         return repository.save(pessoa);
     }
 
 
-    @Override
-    public Optional<Pessoa> update(Pessoa pessoa) {
+    public Pessoa update(Pessoa pessoa) {
         return repository.save(pessoa);
     }
 
-    @Override
     public void deleteByID(Long id) {
-        Optional<Pessoa> pessoa = get(id);
-
-        if(!pessoa.isPresent()) {
             repository.deleteById(id);
-        } else {
-            throw new PessoaNotFoundException(id);
-        }
     }
+}
 
 
