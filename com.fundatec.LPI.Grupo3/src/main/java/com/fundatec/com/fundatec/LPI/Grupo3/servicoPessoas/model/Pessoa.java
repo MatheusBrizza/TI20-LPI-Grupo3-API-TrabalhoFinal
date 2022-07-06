@@ -49,4 +49,22 @@ public class Pessoa {
     @NotNull
     @Column(name = "Status")
     private Boolean status;
+
+    @NotNull
+    @Column(name = "Telefone")
+    private Integer telefone;
+
+    @NotNull
+    @Column(name = "Email")
+    private String email;
+
+    @NotNull
+    @Column(name = "Cargo")
+    private Integer cargo;
+
+    @NotNull
+    @Column(name = "Especialidade")
+    private Integer especialidade;
+    @OneToOne
+    private Endereco endereco;
 }
