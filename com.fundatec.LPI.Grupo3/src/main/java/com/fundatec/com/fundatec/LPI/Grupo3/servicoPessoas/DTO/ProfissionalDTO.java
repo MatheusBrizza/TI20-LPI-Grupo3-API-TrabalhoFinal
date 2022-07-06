@@ -1,16 +1,15 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model;
+package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.DTO;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Endereco;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
-@Entity
-public class Fornecedor extends Pessoa {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_pessoa;
+public class ProfissionalDTO {
+
+
 
     @NotNull
     @Column(name = "nome")
@@ -19,7 +18,7 @@ public class Fornecedor extends Pessoa {
     @NotNull
     @Column (name = "enderco")
     @OneToOne
-    private Endereco Endereco;
+    private com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Endereco Endereco;
 
     @NotNull
     @Column(name = "data_cadastro")
