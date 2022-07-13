@@ -22,7 +22,6 @@ public class Pessoa {
 
     @NotNull
     @Column (name = "enderco")
-
     private Endereco Endereco;
 
     @NotNull

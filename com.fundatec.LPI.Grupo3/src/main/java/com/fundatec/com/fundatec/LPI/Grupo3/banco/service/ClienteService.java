@@ -4,12 +4,11 @@ import com.fundatec.com.fundatec.LPI.Grupo3.banco.model.Conta;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.ClienteRepository;
 
 public class ClienteService {
-    private final ClienteRepository clienteRepository;
+   // private final ClienteRepository clienteRepository;
 
 
-    public ClienteService(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
-    }
-    public Conta criar (String cpf){
-    }
+   // public ClienteService(ClienteRepository clienteRepository) {
+    //}
+   // public Conta        this.clienteRepository = clienteRepository; criar (String cpf){
+    //}
 }
