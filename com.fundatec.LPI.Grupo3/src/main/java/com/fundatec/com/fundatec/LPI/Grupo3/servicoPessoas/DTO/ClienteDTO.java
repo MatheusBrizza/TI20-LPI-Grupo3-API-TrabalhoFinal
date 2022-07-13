@@ -18,13 +18,9 @@ public class ClienteDTO {
     private String nome;
 
     @NotNull
-    @Column (name = "enderco")
+    @Column (name = "endereco")
     @OneToOne
     private Endereco Endereco;
-
-    @NotNull
-    @Column (name = "sexo")
-    private Character sexo;
 
     @NotNull
     @Column (name = "data-nascimento")

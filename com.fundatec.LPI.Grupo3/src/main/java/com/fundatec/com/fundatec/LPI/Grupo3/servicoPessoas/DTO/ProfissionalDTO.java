@@ -16,9 +16,9 @@ public class ProfissionalDTO {
     private String nome;
 
     @NotNull
-    @Column (name = "enderco")
+    @Column (name = "endereco")
     @OneToOne
-    private com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Endereco Endereco;
+    private Endereco endereco;
 
     @NotNull
     @Column(name = "data_cadastro")

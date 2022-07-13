@@ -12,16 +12,16 @@ public class PessoaController {
         this.pessoaService = pessoaService;
     }
     @GetMapping("/api/v1/pessoas")
-    public Optional <Pessoa> Pessoa(Integer id) {
-        return pessoaService.getById(id);
+    public Optional <Pessoa> Pessoa(Long id) {
+       return pessoaService.findById(id);
     }
     @PostMapping("/api/v1/pessoas")
-    Pessoa novaPessoa(@RequestBody PessoaDTO pessoa) {
-        return pessoaService.save();
+    Pessoa novaPessoa(@RequestBody Pessoa pessoa) {
+        return pessoaService.save(pessoa);
     }
     @PutMapping("/api/v1/pessoas")
-    Pessoa updatePessoa (@RequestBody PessoaDTO pessoaAlterada, @PathVariable Long id){
-        return pessoaService.update();
+    Pessoa updatePessoa (@RequestBody Pessoa pessoaAlterada, @PathVariable Long id){
+        return pessoaService.update(pessoaAlterada);
     }
     @DeleteMapping("/api/v1/pessoas/{id}")
     void delete(@PathVariable Long id) {

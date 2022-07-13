@@ -18,21 +18,13 @@ public class FornecedorDTO {
     private String nome;
 
     @NotNull
-    @Column (name = "enderco")
+    @Column (name = "endereco")
     @OneToOne
     private Endereco Endereco;
 
     @NotNull
     @Column(name = "data_cadastro")
     private LocalDate data_cadastro;
-
-    @NotNull
-    @Column(name = "estado_civil")
-    private String estado_civil;
-
-    @NotNull
-    @Column(name = "profissao")
-    private String profissao;
 
     @NotNull
     @Column(name = "Status")
