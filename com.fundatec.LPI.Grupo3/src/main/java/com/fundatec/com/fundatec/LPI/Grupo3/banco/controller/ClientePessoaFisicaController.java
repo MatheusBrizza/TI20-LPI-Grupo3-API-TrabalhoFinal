@@ -1,7 +1,6 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.controller;
 
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.model.ClientePessoaFisica;
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.ClientePessoaFisicaRepository;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.service.ClientePessoaFisicaService;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,5 +29,14 @@ public class ClientePessoaFisicaController {
         return null;
     }
 
-    
+    @GetMapping
+    public Iterable<ClientePessoaFisica> findAll() {
+        return service.findAll();
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Integer id) {
+        service.delete(id);
+    }
+
 }
