@@ -7,7 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
-public class ClienteDTO {
+public class PessoaFisicaDTO {
 
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

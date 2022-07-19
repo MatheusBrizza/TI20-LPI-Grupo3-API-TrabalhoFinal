@@ -1,24 +1,23 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.DTO;
+package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model;
 
-import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Endereco;
-
-import javax.persistence.Column;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
-public class ProfissionalDTO {
-
-
+@Entity
+public class PessoaFisica extends Pessoa {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_pessoa;
 
     @NotNull
     @Column(name = "nome")
     private String nome;
 
     @NotNull
-    @Column (name = "endereco")
+    @Column (name = "enderco")
     @OneToOne
-    private Endereco endereco;
+    private Endereco Endereco;
 
     @NotNull
     @Column(name = "data_cadastro")

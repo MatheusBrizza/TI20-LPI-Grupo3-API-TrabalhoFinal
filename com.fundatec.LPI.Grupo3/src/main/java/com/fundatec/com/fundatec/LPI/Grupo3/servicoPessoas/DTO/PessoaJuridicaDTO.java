@@ -1,13 +1,12 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.DTO;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Endereco;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
-public class FornecedorDTO {
+public class PessoaJuridicaDTO {
 
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
