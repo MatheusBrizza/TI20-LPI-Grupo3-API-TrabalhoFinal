@@ -1,6 +1,6 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.service;
 
-import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.model.ContaCorrente;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model.model.ContaCorrente;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.ContaCorrenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

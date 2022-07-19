@@ -1,7 +1,6 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.DTO;
+package com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.DTO;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Endereco;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,7 +19,7 @@ public class PessoaFisicaDTO {
     @NotNull
     @Column (name = "endereco")
     @OneToOne
-    private Endereco Endereco;
+    private com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model.Endereco Endereco;
 
     @NotNull
     @Column (name = "data-nascimento")

@@ -1,6 +1,4 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.DTO;
-
-import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Endereco;
+package com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.DTO;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -8,7 +6,7 @@ import java.time.LocalDate;
 
 public class PessoaJuridicaDTO {
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long Id;
 
@@ -19,7 +17,7 @@ public class PessoaJuridicaDTO {
     @NotNull
     @Column (name = "endereco")
     @OneToOne
-    private Endereco Endereco;
+    private com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model.Endereco Endereco;
 
     @NotNull
     @Column(name = "data_cadastro")

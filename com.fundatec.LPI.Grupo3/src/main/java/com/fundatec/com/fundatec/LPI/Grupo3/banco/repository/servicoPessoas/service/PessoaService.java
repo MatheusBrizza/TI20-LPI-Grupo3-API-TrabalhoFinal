@@ -1,11 +1,9 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.service;
+package com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.service;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.PessoaRepository;
-import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Pessoa;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model.Pessoa;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 
-import java.util.List;
 import java.util.Optional;
 @Service
 public class PessoaService {

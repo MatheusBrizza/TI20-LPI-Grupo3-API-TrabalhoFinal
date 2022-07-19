@@ -1,7 +1,7 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.controller;
 
 <<<<<<< HEAD
-import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.model.ClientePessoaFisica;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model.model.ClientePessoaFisica;
 =======
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.model.ClientePessoaFisica;
 >>>>>>> 2e685f260f3d3af0f306dafe4d1c0124ca5bc2d3
