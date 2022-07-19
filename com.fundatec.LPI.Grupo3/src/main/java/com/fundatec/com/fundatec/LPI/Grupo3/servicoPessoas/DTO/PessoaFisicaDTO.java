@@ -1,4 +1,4 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.DTO;
+package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.DTO;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -19,7 +19,7 @@ public class PessoaFisicaDTO {
     @NotNull
     @Column (name = "endereco")
     @OneToOne
-    private com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model.Endereco Endereco;
+    private com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Endereco Endereco;
 
     @NotNull
     @Column (name = "data-nascimento")

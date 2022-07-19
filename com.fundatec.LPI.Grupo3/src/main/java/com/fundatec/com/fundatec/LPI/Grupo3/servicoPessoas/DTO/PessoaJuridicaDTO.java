@@ -1,9 +1,10 @@
+package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.DTO;
+
 <<<<<<< HEAD:com.fundatec.LPI.Grupo3/src/main/java/com/fundatec/com/fundatec/LPI/Grupo3/banco/repository/servicoPessoas/DTO/PessoaJuridicaDTO.java
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.DTO;
 =======
 package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.DTO;
 
-import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Endereco;
 >>>>>>> ad3bde725c4ab75809d7bea62134f77b7989a998:com.fundatec.LPI.Grupo3/src/main/java/com/fundatec/com/fundatec/LPI/Grupo3/servicoPessoas/DTO/PessoaJuridicaDTO.java
 
 import javax.persistence.*;
@@ -23,7 +24,7 @@ public class PessoaJuridicaDTO {
     @NotNull
     @Column (name = "endereco")
     @OneToOne
-    private com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model.Endereco Endereco;
+    private com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Endereco Endereco;
 
     @NotNull
     @Column(name = "data_cadastro")

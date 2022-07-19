@@ -1,4 +1,4 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model.model;
+package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.model;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;

@@ -1,6 +1,6 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.controller;
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model.Pessoa;
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.service.PessoaService;
+package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.controller;
+import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Pessoa;
+import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.service.PessoaService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;

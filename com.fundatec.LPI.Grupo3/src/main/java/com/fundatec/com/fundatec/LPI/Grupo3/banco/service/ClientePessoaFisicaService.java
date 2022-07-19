@@ -1,6 +1,6 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.service;
 
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model.model.ClientePessoaFisica;
+import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.model.ClientePessoaFisica;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.ClientePessoaFisicaRepository;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.repository;
 
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model.Pessoa;
+import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Pessoa;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
