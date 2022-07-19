@@ -1,9 +1,7 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.service;
 
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.model.ClientePessoaJuridica;
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.ClientePessoaFisicaRepository;
+import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.model.ClientePessoaJuridica;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.ClientePessoaJuridicaRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

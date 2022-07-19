@@ -1,6 +1,4 @@
-package com.fundatec.com.fundatec.LPI.Grupo3.banco.model;
-
-import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Pessoa;
+package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -33,7 +31,7 @@ public class Conta {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
-    private Pessoa pessoa;
+    private Long  id_pessoa;
 
 
 }
