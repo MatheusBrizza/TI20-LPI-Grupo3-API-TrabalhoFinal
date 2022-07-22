@@ -1,7 +1,7 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.enums.TipoMovimentacao;
+import com.fundatec.com.fundatec.LPI.Grupo3.Antigo.service.model.enums.TipoMovimentacao;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
