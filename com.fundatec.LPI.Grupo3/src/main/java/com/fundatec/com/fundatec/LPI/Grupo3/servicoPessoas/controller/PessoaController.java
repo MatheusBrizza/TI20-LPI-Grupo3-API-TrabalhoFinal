@@ -1,10 +1,11 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.controller;
-import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Pessoa;
 import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.service.PessoaService;
+import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Pessoa;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
-
+@RestController
+@
 public class PessoaController {
     private final PessoaService pessoaService;
 

@@ -1,4 +1,4 @@
-package com.fundatec.com.fundatec.LPI.Grupo3;
+package com.fundatec.LPI.Grupo3;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

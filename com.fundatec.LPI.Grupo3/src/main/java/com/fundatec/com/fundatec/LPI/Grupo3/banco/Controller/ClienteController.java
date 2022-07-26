@@ -1,6 +1,6 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.Controller;
 
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Cliente;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.ResponseDTO.ResponseClienteDTO;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ClienteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +19,13 @@ public class ClienteController {
 
     //METODO GET
     @GetMapping
-    public List<Cliente> listarClientes(){
+    public List<ResponseClienteDTO> listarClientes(){
+
         return clienteRepository.findAll();
     }
     // Buscar
     @GetMapping
-    public ResponseEntity<Cliente> buscar(@PathVariable Long id){
+    public ResponseEntity<ResponseClienteDTO> buscarClientePorId(@PathVariable Long id){
         return clienteRepository.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -32,12 +33,12 @@ public class ClienteController {
     //METODO POST
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Cliente adicionar(@RequestBody Cliente cliente){
-        return clienteRepository.save(cliente);
+    public ResponseClienteDTO adicionarCliente(@RequestBody ResponseClienteDTO responseClienteDTO){
+        return clienteRepository.save(responseClienteDTO);
     }
     //METODO PUT
     @PutMapping()
-    public ResponseEntity<Cliente> atualizar(@PathVariable Long id, @RequestBody Cliente cliente){
+    public ResponseEntity<ResponseClienteDTO> atualizarCliente(@PathVariable Long id, @RequestBody ResponseClienteDTO responseClienteDTO){
         if (!clienteRepository.existsById(id)){
             return ResponseEntity.notFound().build();
         }

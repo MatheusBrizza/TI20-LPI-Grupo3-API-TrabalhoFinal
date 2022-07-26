@@ -1,11 +1,14 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.DTO;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-
+@RestController
+@RequestMapping("/")
 public class PessoaFisicaDTO {
 
     @javax.persistence.Id

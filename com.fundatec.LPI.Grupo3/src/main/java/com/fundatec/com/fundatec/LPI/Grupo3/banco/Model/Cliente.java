@@ -1,12 +1,16 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.Model;
 
-import lombok.Builder;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Getter
+@Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "Tabela_Cliente")
 public class Cliente {
     @Id
@@ -28,5 +32,8 @@ public class Cliente {
 
     @Column(name = "data_nascimento")
     private LocalDate data_nascimento;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Banco banco;
 
 }

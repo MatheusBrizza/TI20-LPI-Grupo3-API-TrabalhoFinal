@@ -1,8 +1,6 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.Model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -14,6 +12,8 @@ import java.time.LocalDate;
 @Table(name = "Movimentacoes")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class Movimentacao {
     private Long id;
     private Conta conta;

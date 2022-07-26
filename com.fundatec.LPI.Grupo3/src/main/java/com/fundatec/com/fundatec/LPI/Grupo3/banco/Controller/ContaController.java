@@ -1,7 +1,7 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.Controller;
 
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ContaRepository;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Conta;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ContaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

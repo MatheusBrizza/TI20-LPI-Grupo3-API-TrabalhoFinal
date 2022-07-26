@@ -2,9 +2,7 @@ package com.fundatec.com.fundatec.LPI.Grupo3.banco.Model;
 
 //import com.fundatec.com.fundatec.LPI.Grupo3.Antigo.service.model.Banco;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Enum.StatusDaConta;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -16,6 +14,8 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Conta {
     @Id
     @NotNull

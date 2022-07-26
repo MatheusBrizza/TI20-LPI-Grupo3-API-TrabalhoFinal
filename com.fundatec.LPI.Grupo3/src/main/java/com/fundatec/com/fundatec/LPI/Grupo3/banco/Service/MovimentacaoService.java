@@ -3,7 +3,6 @@ package com.fundatec.com.fundatec.LPI.Grupo3.banco.Service;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Conta;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Movimentacao;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.MovimentacaoRepository;
-import org.hibernate.ObjectNotFoundException;
 
 import java.util.List;
 

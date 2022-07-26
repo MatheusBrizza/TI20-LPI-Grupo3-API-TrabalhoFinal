@@ -1,11 +1,11 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.Service;
 
 
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Cliente;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Conta;
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Enum.StatusDaConta;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ClienteRepository;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ContaRepository;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Cliente;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Enum.StatusDaConta;
 import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.model.Movimentacao;
 
 import java.util.List;

@@ -2,9 +2,7 @@ package com.fundatec.com.fundatec.LPI.Grupo3.banco.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -13,6 +11,8 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "banco")
 public class Banco {
     @Id
@@ -28,5 +28,6 @@ public class Banco {
     @Column(name = "nome")
     private String nome;
 
+    @Column(name = "senha")
     private String senha;
 }
