@@ -6,7 +6,7 @@ import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.BancoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BancoService {
@@ -24,15 +24,11 @@ public class BancoService {
 
         return bancoRepository.save(banco);
     }
-    public Banco findAll(){
+    public Iterable<Banco> findAll(){
 
         return bancoRepository.findAll();
     }
-    public Banco findById(Long id) {
-
-        return bancoRepository.findById(id);
-    }
-    public List<Banco> findById(Long id){
+    public Optional<Banco> findById(Long id){
         return bancoRepository.findById(id);
     }
 }

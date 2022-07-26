@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/bancos")
@@ -25,20 +25,19 @@ public class BancoController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity <Banco> findAll(){
-        List
+    public Iterable<Banco> findAll(){
+        return bancoService.findAll();
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.FOUND)
     public ResponseEntity<Banco> findById(@PathVariable("id") Long id){
-        Banco banco = bancoService.findById(id);
-        return ResponseEntity.ok(banco);
+        Optional<Banco> banco = bancoService.findById(id);
+        return ResponseEntity.ok(banco.get());
     }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Banco> criarUmNovoBanco(@RequestBody Banco banco){
-        return ResponseEntity.status(HttpStatus.CREATED);
-        //Duvida
+        return (ResponseEntity<Banco>) ResponseEntity.status(HttpStatus.CREATED);
     }
 }

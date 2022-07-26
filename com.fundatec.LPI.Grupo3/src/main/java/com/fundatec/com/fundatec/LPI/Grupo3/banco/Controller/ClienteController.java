@@ -3,6 +3,7 @@ package com.fundatec.com.fundatec.LPI.Grupo3.banco.Controller;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Cliente;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.ResponseDTO.ResponseClienteDTO;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ClienteRepository;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Service.ClienteService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,8 @@ import java.util.List;
 @RequestMapping("/v1/clientes")
 public class ClienteController {
     @Autowired
-    ClienteRepository clienteRepository;
+    private ClienteRepository clienteRepository;
+    private ClienteService clienteService;
 
     public ClienteController(ClienteRepository clienteRepository) {
         this.clienteRepository = clienteRepository;
@@ -24,8 +26,8 @@ public class ClienteController {
 
     //METODO GET
     @GetMapping
-    public List<Cliente> listarClientes(){
-        return clienteRepository.findAll();
+    public Iterable<Cliente> listarClientes(){
+        return clienteService.findAll();
     }
     // Buscar
     @GetMapping
@@ -37,18 +39,20 @@ public class ClienteController {
     //METODO POST
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseClienteDTO adicionarCliente(@RequestBody ResponseClienteDTO responseClienteDTO){
-        return clienteRepository.save(responseClienteDTO);
+    public Cliente adicionarCliente(@RequestBody Cliente cliente){
+        return clienteRepository.save(cliente);
     }
     //METODO PUT
     @PutMapping()
-    public ResponseEntity<ResponseClienteDTO> atualizarCliente(@PathVariable Long id, @RequestBody ResponseClienteDTO responseClienteDTO){
+    public ResponseEntity<Cliente> atualizarCliente(@PathVariable Long id, @RequestBody Cliente cliente){
         if (!clienteRepository.existsById(id)){
             return ResponseEntity.notFound().build();
         }
-        cliente.setId(id);
-        cliente = clienteRepository.save(cliente);
-        return ResponseEntity.ok(cliente);
+        Cliente clienteParaAtualizar = clienteService.findById(id).get();
+        clienteParaAtualizar.setBanco(cliente.getBanco());
+
+        clienteService.salvarCliente(clienteParaAtualizar);
+        return ResponseEntity.ok(clienteParaAtualizar);
     }
     @DeleteMapping
     public ResponseEntity<Void> remover(@PathVariable Long id){
