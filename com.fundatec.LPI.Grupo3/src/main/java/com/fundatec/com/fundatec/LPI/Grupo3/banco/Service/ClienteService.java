@@ -5,6 +5,7 @@ import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Optional;
 
 public class ClienteService {
     //Injetando a dependencia
@@ -23,16 +24,19 @@ public class ClienteService {
 
     //Cadastrando novo cliente
     public Cliente cadastrarNovoCliente(Cliente cliente){
+
         return clienteRepository.save(cliente);
     }
     //Listar todos os clientes
-    public List <Cliente> findAll(){
+    public Iterable <Cliente> findAll(){
+
         return clienteRepository.findAll();
     }
 
     //Listar por Id
-    public List<Cliente> findById(){
-        return clienteRepository.findById();
+    public Optional<Cliente> findById(Long id){
+
+        return clienteRepository.findById(id);
     }
 
 }

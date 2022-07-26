@@ -13,7 +13,7 @@ public class MovimentacaoService {
 
     public Movimentacao findById(Long id) {
 
-        return movimentacaoRepository.findById(id);
+        return movimentacaoRepository.findById(id).get();
     }
 
     public Movimentacao salvar(Movimentacao movimentacao) {
@@ -21,7 +21,7 @@ public class MovimentacaoService {
         return movimentacaoRepository.save(movimentacao);
     }
 
-    public List<Movimentacao> listar() {
+    public Iterable<Movimentacao> listar() {
 
         return movimentacaoRepository.findAll();
     }

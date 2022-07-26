@@ -24,8 +24,7 @@ public class CaixaAutomaticoController {
     @GetMapping("/saldo/{cpf}")
     @ResponseStatus(HttpStatus.FOUND)
     public BigDecimal consultarSaldoConta(@PathVariable Long id){
-        Conta conta = contaService.findById(id);
-        return contaService.buscarSaldo(conta);
+        return contaService.buscarSaldo(id).getSaldo();
     }
     @GetMapping("/extrato/{cpf}")
     @ResponseStatus(HttpStatus.FOUND)
@@ -36,21 +35,22 @@ public class CaixaAutomaticoController {
     @PutMapping("/depositar/{id}/{saldo}")
     @ResponseStatus(HttpStatus.OK)
     public void depositar(@PathVariable Long id, @PathVariable BigDecimal saldo) {
-        Conta conta = contaService.findById(id);
+        Conta conta = contaService.findById(id).get();
         contaService.depositar(conta, saldo);
     }
     @PutMapping("/sacar/{id}/{saldo}")
     @ResponseStatus(HttpStatus.OK)
     public void sacar(@PathVariable Long id, @PathVariable BigDecimal saldo) {
-        Conta conta = contaService.findById(id);
+        Conta conta = contaService.findById(id).get();
         contaService.sacar(conta, saldo);
     }
-    // Duvida conta 1 e 2 vão na classe conta?
-    @PutMapping("/{idConta1}/{idConta2}/{saldo}")
+    @PutMapping("/{idOrigem}/{idDestino}/{saldo}")
     @ResponseStatus(HttpStatus.OK)
-    public void transferir(@PathVariable Long id_conta1, @PathVariable Long id_conta2, @PathVariable BigDecimal saldo) {
-        Conta contaOrigem = contaService.findById(id_conta1);
-        Conta contaDestino = contaService.findById(id_conta2);
-        contaService.transferir(conta1, conta2, saldo);
+    public void transferir(@PathVariable ("idOrigem") Long id,
+                           @PathVariable ("idDestino") Long idDestino,
+                           @PathVariable ()BigDecimal valor) {
+        Conta contaOrigem = contaService.findById(id).get();
+        Conta contaDestino = contaService.findById(idDestino).get();
+        contaService.transferir(valor, contaOrigem, contaDestino);
     }
 }

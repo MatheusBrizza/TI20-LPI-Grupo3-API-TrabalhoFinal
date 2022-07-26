@@ -47,7 +47,7 @@ public class CaixaAutomaticoService {
     //Depositar
     public  void depositar(Conta conta, BigDecimal valor){
         if(conta.getStatusDaConta() == StatusDaConta.INATIVA ) {
-            throw  new RuntimeException("Conta origem inativa!")
+            throw  new RuntimeException("Conta origem inativa!");
         }
         BigDecimal saldo = conta.getSaldo();
         saldo = saldo.add(valor);
@@ -59,7 +59,7 @@ public class CaixaAutomaticoService {
     //Sacar
     public void sacar(Conta conta, BigDecimal valor) {
         if(conta.getStatusDaConta() == StatusDaConta.INATIVA ) {
-            throw  new RuntimeException("Conta origem inativa!")
+            throw  new RuntimeException("Conta origem inativa!");
         }
         BigDecimal saldo = conta.getSaldo();
         saldo = saldo.subtract(valor);
@@ -69,12 +69,12 @@ public class CaixaAutomaticoService {
         // Diminuir da conta? E adicionar?
     }
     //Conta de Origem e conta Destino
-    public Movimentacao transferir(BigDecimal valor, Conta contaOrigem, Conta contaDestino){
+    public void transferir(BigDecimal valor, Conta contaOrigem, Conta contaDestino){
         if(contaOrigem.getStatusDaConta() == StatusDaConta.INATIVA ) {
-           throw  new RuntimeException("Conta origem inativa!")
+           throw  new RuntimeException("Conta origem inativa!");
         }
         if(contaDestino.getStatusDaConta() == StatusDaConta.INATIVA ) {
-            throw  new RuntimeException("Conta origem inativa!")
+            throw  new RuntimeException("Conta origem inativa!");
         }
         sacar(contaOrigem, valor);
         depositar(contaDestino, valor);
