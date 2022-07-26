@@ -16,11 +16,14 @@ import java.util.List;
 public class CaixaAutomaticoController {
     private CaixaAutomaticoService caixaAutomaticoService;
     private ContaService contaService;
-    @Autowired
-    public CaixaAutomaticoController(CaixaAutomaticoService caixaAutomaticoService, ContaService contaService){
+
+    public CaixaAutomaticoController(CaixaAutomaticoService caixaAutomaticoService, ContaService contaService) {
         this.caixaAutomaticoService = caixaAutomaticoService;
         this.contaService = contaService;
     }
+
+    @Autowired
+
     @GetMapping("/saldo/{cpf}")
     @ResponseStatus(HttpStatus.FOUND)
     public BigDecimal consultarSaldoConta(@PathVariable Long id){

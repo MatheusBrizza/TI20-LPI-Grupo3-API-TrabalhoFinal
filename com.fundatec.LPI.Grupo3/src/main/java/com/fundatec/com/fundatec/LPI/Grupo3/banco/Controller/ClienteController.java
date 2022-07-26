@@ -1,5 +1,6 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.Controller;
 
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Cliente;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.ResponseDTO.ResponseClienteDTO;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ClienteRepository;
 import lombok.AllArgsConstructor;
@@ -17,14 +18,18 @@ public class ClienteController {
     @Autowired
     ClienteRepository clienteRepository;
 
+    public ClienteController(ClienteRepository clienteRepository) {
+        this.clienteRepository = clienteRepository;
+    }
+
     //METODO GET
     @GetMapping
-    public List<ResponseClienteDTO> listarClientes(){
+    public List<Cliente> listarClientes(){
         return clienteRepository.findAll();
     }
     // Buscar
     @GetMapping
-    public ResponseEntity<ResponseClienteDTO> buscarClientePorId(@PathVariable Long id){
+    public ResponseEntity<Cliente> buscarClientePorId(@PathVariable Long id){
         return clienteRepository.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

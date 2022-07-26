@@ -27,12 +27,11 @@ public class BancoService {
 
         return bancoRepository.findAll();
     }
-    public Banco findById(Long id){
+    public Banco findById(Long id) {
 
         return bancoRepository.findById(id);
     }
-    public Conta getContaById(Banco banco, Long id){
-
-        List<Conta> contas = banco.getConta();
+    public List<Banco> findById(Long id){
+        return bancoRepository.findById(id);
     }
 }

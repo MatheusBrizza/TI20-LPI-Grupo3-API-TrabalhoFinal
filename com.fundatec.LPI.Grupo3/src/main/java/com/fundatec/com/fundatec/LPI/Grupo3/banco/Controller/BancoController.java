@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/v1/bancos")
 @RequiredArgsConstructor
@@ -16,11 +18,15 @@ public class BancoController {
     private BancoService bancoService;
     private Banco banco;
 
+    public BancoController(BancoService bancoService, Banco banco) {
+        this.bancoService = bancoService;
+        this.banco = banco;
+    }
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity <Banco> findAll(){
-//        List<Banco> banco =
-//        return ResponseEntity.ok(banco);
+        List
     }
 
     @GetMapping("/{id}")
