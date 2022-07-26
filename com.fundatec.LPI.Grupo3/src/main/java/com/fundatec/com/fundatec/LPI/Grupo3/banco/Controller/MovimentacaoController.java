@@ -13,7 +13,7 @@ import java.util.List;
 
 @Controller
 @RestController
-@RequestMapping("Transacao")
+@RequestMapping("/v1/movimentacao")
 public class MovimentacaoController {
     @Autowired
     private MovimentacaoService movimentacaoService;

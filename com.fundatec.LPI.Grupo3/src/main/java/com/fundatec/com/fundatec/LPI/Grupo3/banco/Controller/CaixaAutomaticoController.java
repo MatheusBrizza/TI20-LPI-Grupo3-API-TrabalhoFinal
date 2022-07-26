@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/v1/caixaautomatico")
 public class CaixaAutomaticoController {
     private CaixaAutomaticoService caixaAutomaticoService;
     private ContaService contaService;

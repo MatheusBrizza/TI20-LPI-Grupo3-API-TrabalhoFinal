@@ -12,6 +12,10 @@ import java.util.List;
 public class EnderecoService {
     private EnderecoRepository enderecoRepository;
 
+    public EnderecoService(EnderecoRepository enderecoRepository) {
+        this.enderecoRepository = enderecoRepository;
+    }
+
     //Salvar Endereço
     public Endereco salvarEndereco(Endereco endereco){
         return enderecoRepository.save(endereco);

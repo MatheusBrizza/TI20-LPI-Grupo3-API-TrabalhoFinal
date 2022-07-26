@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping
-@AllArgsConstructor
 @RestController
+@AllArgsConstructor
+@RequestMapping("/v1/clientes")
 public class ClienteController {
     @Autowired
     ClienteRepository clienteRepository;

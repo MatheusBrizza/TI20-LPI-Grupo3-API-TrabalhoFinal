@@ -3,17 +3,25 @@ package com.fundatec.com.fundatec.LPI.Grupo3.banco.Service;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Conta;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Movimentacao;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.MovimentacaoRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
+@Service
 public class MovimentacaoService {
     private MovimentacaoRepository movimentacaoRepository;
     private Movimentacao movimentacao;
     private Conta conta;
 
-    public Movimentacao findById(Long id) {
+    public MovimentacaoService(MovimentacaoRepository movimentacaoRepository, Movimentacao movimentacao, Conta conta) {
+        this.movimentacaoRepository = movimentacaoRepository;
+        this.movimentacao = movimentacao;
+        this.conta = conta;
+    }
 
-        return movimentacaoRepository.findById(id).get();
+    public Optional<Movimentacao> findById(Long id) {
+        return movimentacaoRepository.findById(id);
     }
 
     public Movimentacao salvar(Movimentacao movimentacao) {
@@ -21,7 +29,7 @@ public class MovimentacaoService {
         return movimentacaoRepository.save(movimentacao);
     }
 
-    public Iterable<Movimentacao> listar() {
+    public List<Movimentacao> listar() {
 
         return movimentacaoRepository.findAll();
     }
@@ -31,9 +39,8 @@ public class MovimentacaoService {
         movimentacaoRepository.deleteById(id);
     }
 
-    public void buscarPeloId(Long id) {
-
-        movimentacaoRepository.findById(id);
+    public List<Movimentacao> findByConta(Conta conta) {
+        movimentacaoRepository.findByConta(conta);
     }
 
     public List<Movimentacao> buscarContas(Conta conta) {

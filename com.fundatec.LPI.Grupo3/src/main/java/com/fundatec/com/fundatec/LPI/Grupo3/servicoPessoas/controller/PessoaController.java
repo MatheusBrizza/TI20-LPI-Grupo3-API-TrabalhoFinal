@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 @RestController
-@
+@RequestMapping("v1/pessoa")
 public class PessoaController {
     private final PessoaService pessoaService;
 

@@ -1,6 +1,6 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.service;
-import com.fundatec.com.fundatec.LPI.Grupo3.Antigo.service.repository.ClienteRepository;
 import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model.Pessoa;
+import com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.repository.PessoaRepository;
 import org.springframework.stereotype.Service;
 
 
@@ -8,9 +8,9 @@ import java.util.Optional;
 @Service
 public class PessoaService {
 
-    private final ClienteRepository repository;
+    private final PessoaRepository repository;
 
-    public PessoaService(ClienteRepository repository) {
+    public PessoaService(PessoaRepository repository) {
         this.repository = repository;
     }
     public Optional<Pessoa> findById(Long id) {

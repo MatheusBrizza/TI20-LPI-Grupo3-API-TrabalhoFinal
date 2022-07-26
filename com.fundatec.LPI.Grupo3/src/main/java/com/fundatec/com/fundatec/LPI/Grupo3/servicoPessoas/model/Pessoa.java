@@ -1,11 +1,19 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "pessoa")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo", length = 1, discriminatorType = DiscriminatorType.STRING)
@@ -35,6 +43,7 @@ public class Pessoa {
 
     @NotNull
     @Column(name = "data_cadastro")
+    @JsonFormat (shape = JsonFormat.Shape.STRING, pattern = "dd/mm/yyyy")
     private LocalDate data_cadastro;
 
     @NotNull
@@ -64,6 +73,7 @@ public class Pessoa {
     @NotNull
     @Column(name = "Especialidade")
     private Integer especialidade;
+
     @OneToOne
     private Endereco endereco;
 }

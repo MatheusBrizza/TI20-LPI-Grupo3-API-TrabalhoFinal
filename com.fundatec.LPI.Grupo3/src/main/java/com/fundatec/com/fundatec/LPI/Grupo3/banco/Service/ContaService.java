@@ -15,6 +15,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ContaService {
     private ContaRepository contaRepository;
     private ClienteRepository clienteRepository;
@@ -46,6 +47,15 @@ public class ContaService {
 
         return contaRepository.save(conta);
     }
+
+    public Conta findByCpf(String cpf) {
+    return contaRepository.findByCpf(cpf);
+    }
+
+    public Iterable<Conta> listarTodasContas() {
+        return contaRepository.listarTodasContas();
+    }
+
     public Conta ativar(Long id){
         Conta conta = findById(id).get();
         if (conta.getStatusDaConta().equals(StatusDaConta.ATIVA)) {

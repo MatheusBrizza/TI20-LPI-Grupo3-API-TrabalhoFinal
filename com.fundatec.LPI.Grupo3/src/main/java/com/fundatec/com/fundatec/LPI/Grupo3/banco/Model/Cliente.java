@@ -26,6 +26,7 @@ public class Cliente {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco")
+    private Endereco endereco;
 
     @Column(name = "Genero")
     private String genero;
