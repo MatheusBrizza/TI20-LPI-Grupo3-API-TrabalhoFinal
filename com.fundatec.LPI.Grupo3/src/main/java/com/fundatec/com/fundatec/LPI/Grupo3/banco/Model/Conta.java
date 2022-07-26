@@ -43,7 +43,7 @@ public class Conta {
     @JoinColumn(name = "id_banco")
 //    private Banco banco;
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Movimentacoes> Movimentacoes;
+    private List<Movimentacao> movimentacoes;
 
     public boolean verificarStatus(StatusDaConta statusDaConta){
         return StatusDaConta.INATIVA != statusDaConta;

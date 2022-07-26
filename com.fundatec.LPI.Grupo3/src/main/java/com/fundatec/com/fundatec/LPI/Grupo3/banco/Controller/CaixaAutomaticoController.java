@@ -1,6 +1,7 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.Controller;
 
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Conta;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Movimentacao;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Service.CaixaAutomaticoService;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Service.ContaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @RestController
 @RequestMapping
@@ -47,8 +49,8 @@ public class CaixaAutomaticoController {
     @PutMapping("/{idConta1}/{idConta2}/{saldo}")
     @ResponseStatus(HttpStatus.OK)
     public void transferir(@PathVariable Long id_conta1, @PathVariable Long id_conta2, @PathVariable BigDecimal saldo) {
-        Conta conta1 = contaService.findById(id_conta1);
-        Conta conta2 = contaService.findById(id_conta2);
+        Conta contaOrigem = contaService.findById(id_conta1);
+        Conta contaDestino = contaService.findById(id_conta2);
         contaService.transferir(conta1, conta2, saldo);
     }
 }

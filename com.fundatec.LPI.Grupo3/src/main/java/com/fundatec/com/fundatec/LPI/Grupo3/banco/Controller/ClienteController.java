@@ -20,7 +20,6 @@ public class ClienteController {
     //METODO GET
     @GetMapping
     public List<ResponseClienteDTO> listarClientes(){
-
         return clienteRepository.findAll();
     }
     // Buscar

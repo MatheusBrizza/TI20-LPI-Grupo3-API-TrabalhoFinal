@@ -32,7 +32,7 @@ public class BancoController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Banco> criarUmNovoBanco(@RequestBody Banco banco){
-        return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity.status(HttpStatus.CREATED);
         //Duvida
     }
 }

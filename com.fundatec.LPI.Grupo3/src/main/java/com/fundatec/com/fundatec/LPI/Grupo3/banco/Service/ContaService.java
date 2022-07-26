@@ -14,7 +14,6 @@ public class ContaService {
     private ContaRepository contaRepository;
     private ClienteRepository clienteRepository;
     private ClienteService clienteService;
-    private  BancoService;
 
     //Listar todas as contas
     public List<Conta> findAll(){
