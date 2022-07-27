@@ -2,6 +2,7 @@ package com.fundatec.com.fundatec.LPI.Grupo3.banco.Controller;
 
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Conta;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ContaRepository;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Service.ContaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,11 +14,12 @@ import java.util.Optional;
 public class ContaController {
     @Autowired
     private ContaRepository contaRepository;
-//    private ContaService contaService;
+    private ContaService contaService;
 
-//    ContaController(ContaService contaService){
-//        this.contaService;
-//    }
+    public ContaController(ContaRepository contaRepository, ContaService contaService) {
+        this.contaRepository = contaRepository;
+        this.contaService = contaService;
+    }
 
     //METODO GET
     //Listar todas as contas
@@ -52,4 +54,5 @@ public class ContaController {
         contaParaAtt.setMovimentacoes(conta.getMovimentacoes());
         return contaRepository.save(contaParaAtt);
     }
+
 }

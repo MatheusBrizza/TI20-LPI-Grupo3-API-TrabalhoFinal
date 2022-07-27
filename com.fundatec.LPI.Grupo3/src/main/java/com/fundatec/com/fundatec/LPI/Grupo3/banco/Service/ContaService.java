@@ -24,13 +24,16 @@ public class ContaService {
     private  MovimentacaoService movimentacaoService;
     private BancoService bancoService;
 
+    private Banco banco;
+
     public ContaService(ContaRepository contaRepository, ClienteRepository clienteRepository,
-                        ClienteService clienteService, MovimentacaoService movimentacaoService, BancoService bancoService) {
+                        ClienteService clienteService, MovimentacaoService movimentacaoService, BancoService bancoService, Banco banco) {
         this.contaRepository = contaRepository;
         this.clienteRepository = clienteRepository;
         this.clienteService = clienteService;
         this.movimentacaoService = movimentacaoService;
         this.bancoService = bancoService;
+        this.banco =banco;
     }
 
     //Listar todas as contas
