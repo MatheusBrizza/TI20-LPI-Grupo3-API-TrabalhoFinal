@@ -85,17 +85,11 @@ public class ContaService {
     }
     //Verificar Conta
     public Conta verficarConta(Long id){
-
     return contaRepository.findById(id).get();
     }
-    //Extrato Conta
-    public List <Movimentacao> extratoConta(Long id){
-        Conta conta = verficarConta(id);
-        return movimentacaoService.buscarContas(conta);
-    }
+
     public Conta buscarSaldo(Long id){
-
-    return contaRepository.findById(id).get();
+        return contaRepository.findById(id).get();
     }
     //Consultar Saldo
     public BigDecimal consultarSaldo(Conta conta){

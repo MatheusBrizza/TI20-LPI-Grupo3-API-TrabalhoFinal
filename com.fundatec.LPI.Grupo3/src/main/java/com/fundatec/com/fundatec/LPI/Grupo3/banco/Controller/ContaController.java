@@ -24,30 +24,35 @@ public class ContaController {
     //METODO GET
     //Listar todas as contas
     @GetMapping
-    public Iterable <Conta> findAll(){
+    public Iterable<Conta> listaTodasConta(){
         return contaRepository.findAll();
     }
-    @GetMapping("/{contasId}")
-    public Optional<Conta> findById (@PathVariable Long id){
-
+    @GetMapping("/{id}")
+    public Optional<Conta> listaIdUnico(@PathVariable Long id){
         return contaRepository.findById(id);
     }
     //METODO POST
     //Salva conta
-    public Conta criar(@RequestBody Conta conta){
-
+    @PostMapping("/")
+    public Conta salvarConta(@RequestBody Conta conta){
         return contaRepository.save(conta);
     }
     //METODO DELETE
-    public void deletarConta(@RequestBody Conta conta){
-
-        contaRepository.delete(conta);
+    @DeleteMapping("/{id}")
+    public void deletarConta(@PathVariable Long id){
+        contaRepository.deleteById(id);
     }
     //METODO PUT
     //ATUALIZAR
-    public Conta atualizarConta(@RequestBody Conta conta){
-
-        return contaRepository.save(conta);
+    @PutMapping("/{id}")
+    public Conta atualizarConta(@RequestBody Conta conta,@PathVariable Long id){
+        Conta contaParaAtt = contaRepository.findById(id).get();
+        contaParaAtt.setStatusDaConta(conta.getStatusDaConta());
+        contaParaAtt.setSaldo(conta.getSaldo());
+        contaParaAtt.setCliente(conta.getCliente());
+        contaParaAtt.setDataCriacao(conta.getDataCriacao());
+        contaParaAtt.setMovimentacoes(conta.getMovimentacoes());
+        return contaRepository.save(contaParaAtt);
     }
 
 }

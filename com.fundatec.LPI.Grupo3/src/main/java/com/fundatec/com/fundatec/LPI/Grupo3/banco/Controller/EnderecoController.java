@@ -17,11 +17,11 @@ public class EnderecoController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<List<Endereco>> findAll(){
-        List<Endereco> endereco = enderecoService.findaAll();
+    public ResponseEntity<Iterable<Endereco>> findAll(){
+        Iterable<Endereco> endereco = enderecoService.findaAll();
         return ResponseEntity.ok(endereco);
     }
-    @GetMapping
+    @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.FOUND)
     public ResponseEntity<Endereco> findById(@PathVariable("id") Long id){
         Endereco endereco = enderecoService.findById(id);
@@ -31,6 +31,7 @@ public class EnderecoController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Endereco> criarNovoEndereco(@RequestBody Endereco endereco){
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return ResponseEntity.status(HttpStatus.CREATED)
+                // Como prosseguir?
     }
 }
