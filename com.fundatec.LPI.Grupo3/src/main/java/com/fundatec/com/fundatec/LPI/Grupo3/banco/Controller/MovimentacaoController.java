@@ -19,8 +19,8 @@ public class MovimentacaoController {
     private MovimentacaoService movimentacaoService;
     //Salva Deposito
     @RequestMapping(method = RequestMethod.POST, path = "/")
-    public ResponseEntity<Conta> depositar(@RequestBody Movimentacao movimentacao){
-        Movimentacao movimentacao = this.movimentacaoService.salvar(movimentacao);
+    public ResponseEntity<Movimentacao> depositar(@RequestBody Movimentacao movimentacao){
+        this.movimentacaoService.salvar(movimentacao);
         return new ResponseEntity<>(movimentacao, HttpStatus.OK);
     }
     //Deleta valor
@@ -40,7 +40,7 @@ public class MovimentacaoController {
     //Buscar pelo id
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public ResponseEntity<?> buscarPorId(@PathVariable Long id){
-        movimentacaoService.buscarPeloId(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+       Movimentacao movimentacao = movimentacaoService.findById(id).get();
+        return new ResponseEntity<>(movimentacao, HttpStatus.OK);
     }
 }

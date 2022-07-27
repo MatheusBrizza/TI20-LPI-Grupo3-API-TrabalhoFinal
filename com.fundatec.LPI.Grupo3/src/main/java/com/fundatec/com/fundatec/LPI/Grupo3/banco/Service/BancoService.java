@@ -8,7 +8,8 @@ import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.BancoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class BancoService {
@@ -26,12 +27,16 @@ public class BancoService {
 
         return BancoConverter.converterParaResponse(bancoRepository.save(banco));
     }
-    public Iterable<ResponseBancoDTO> findAll(){
-
-        return BancoConverter.converterParaResponse(bancoRepository.findAll());
+    public List<ResponseBancoDTO> findAll(){
+        List<ResponseBancoDTO> lista = new ArrayList<>();
+for (Banco banco: bancoRepository.findAll()){
+    ResponseBancoDTO dto = BancoConverter.converterParaResponse(banco);
+    lista.add(dto);
+}
+        return lista;
     }
-    public Optional<Banco> findById(Long id){
+    public ResponseBancoDTO findById(Long id){
 
-        return BancoConverter.converterParaResponse (bancoRepository.findById(id));
+        return BancoConverter.converterParaResponse (bancoRepository.findById(id).get());
     }
 }

@@ -28,8 +28,7 @@ public class ClienteService {
     }
     //Deletar
     public void deletarClienteById(Long id){
-
-        ClienteConverter.converterParaResponse(clienteRepository.deleteById(id));
+clienteRepository.deleteById(id);
     }
 
     //Cadastrando novo cliente

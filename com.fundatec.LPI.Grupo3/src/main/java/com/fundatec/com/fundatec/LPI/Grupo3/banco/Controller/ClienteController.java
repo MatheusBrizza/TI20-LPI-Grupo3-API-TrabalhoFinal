@@ -1,7 +1,6 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.Controller;
 
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Cliente;
-import com.fundatec.com.fundatec.LPI.Grupo3.banco.ResponseDTO.ResponseClienteDTO;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ClienteRepository;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Service.ClienteService;
 import lombok.AllArgsConstructor;

@@ -10,4 +10,6 @@ public class BancoConverter {
         responseBancoDTO.setSenha(banco.getSenha());
         return responseBancoDTO;
     }
+
+
 }
