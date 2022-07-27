@@ -17,7 +17,7 @@ public class EnderecoController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Endereco> findAll(){
+    public ResponseEntity<List<Endereco>> findAll(){
         List<Endereco> endereco = enderecoService.findaAll();
         return ResponseEntity.ok(endereco);
     }
@@ -31,7 +31,6 @@ public class EnderecoController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Endereco> criarNovoEndereco(@RequestBody Endereco endereco){
-        return ResponseEntity.status(HttpStatus.CREATED)
-                // Como prosseguir?
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

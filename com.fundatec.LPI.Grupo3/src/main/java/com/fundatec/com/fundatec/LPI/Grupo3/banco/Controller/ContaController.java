@@ -2,6 +2,7 @@ package com.fundatec.com.fundatec.LPI.Grupo3.banco.Controller;
 
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Conta;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ContaRepository;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Service.ContaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,34 +14,40 @@ import java.util.Optional;
 public class ContaController {
     @Autowired
     private ContaRepository contaRepository;
-//    private ContaService contaService;
+    private ContaService contaService;
 
-//    ContaController(ContaService contaService){
-//        this.contaService;
-//    }
+    public ContaController(ContaRepository contaRepository, ContaService contaService) {
+        this.contaRepository = contaRepository;
+        this.contaService = contaService;
+    }
 
     //METODO GET
     //Listar todas as contas
     @GetMapping
-    public List<Conta> listaTodasConta(){
+    public Iterable <Conta> findAll(){
         return contaRepository.findAll();
     }
     @GetMapping("/{contasId}")
-    public Optional<Conta> listaIdUnico(@PathVariable Long id){
+    public Optional<Conta> findById (@PathVariable Long id){
+
         return contaRepository.findById(id);
     }
     //METODO POST
     //Salva conta
-    public Conta salvarConta(@RequestBody Conta conta){
+    public Conta criar(@RequestBody Conta conta){
+
         return contaRepository.save(conta);
     }
     //METODO DELETE
     public void deletarConta(@RequestBody Conta conta){
+
         contaRepository.delete(conta);
     }
     //METODO PUT
     //ATUALIZAR
     public Conta atualizarConta(@RequestBody Conta conta){
+
         return contaRepository.save(conta);
     }
+
 }

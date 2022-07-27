@@ -50,7 +50,11 @@ public class ClienteController {
         }
         Cliente clienteParaAtualizar = clienteService.findById(id).get();
         clienteParaAtualizar.setBanco(cliente.getBanco());
-
+        clienteParaAtualizar.setNome(cliente.getNome());
+        clienteParaAtualizar.setCpf(cliente.getCpf());
+        clienteParaAtualizar.setEndereco(cliente.getEndereco());
+        clienteParaAtualizar.setData_nascimento(cliente.getData_nascimento());
+        clienteParaAtualizar.setGenero(cliente.getGenero());
         clienteService.salvarCliente(clienteParaAtualizar);
         return ResponseEntity.ok(clienteParaAtualizar);
     }
