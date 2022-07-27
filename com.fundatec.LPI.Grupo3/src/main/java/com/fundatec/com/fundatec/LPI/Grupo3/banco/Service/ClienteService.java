@@ -1,5 +1,7 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.Service;
 
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Converter.ClienteConverter;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.DTO.ResponseClienteDTO;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ClienteRepository;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +22,20 @@ public class ClienteService {
     }
 
     //Salvar
-    public Cliente salvarCliente(Cliente cliente){
-        return clienteRepository.save(cliente);
+    public ResponseClienteDTO salvarCliente(Cliente cliente){
+
+        return ClienteConverter.converterParaResponse(clienteRepository.save(cliente));
     }
     //Deletar
     public void deletarClienteById(Long id){
-        clienteRepository.deleteById(id);
+
+        ClienteConverter.converterParaResponse(clienteRepository.deleteById(id));
     }
 
     //Cadastrando novo cliente
-    public Cliente cadastrarNovoCliente(Cliente cliente){
+    public ResponseClienteDTO cadastrarNovoCliente(Cliente cliente){
 
-        return clienteRepository.save(cliente);
+        return ClienteConverter.converterParaResponse(clienteRepository.save(cliente));
     }
     //Listar todos os clientes
     public Iterable <Cliente> findAll(){

@@ -1,5 +1,7 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.Service;
 
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Converter.BancoConverter;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.DTO.ResponseBancoDTO;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Conta;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Banco;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.BancoRepository;
@@ -20,15 +22,16 @@ public class BancoService {
         this.conta = conta;
         this.banco = banco;
     }
-    public Banco salvarBanco(Banco banco){
+    public ResponseBancoDTO salvarBanco(Banco banco){
 
-        return bancoRepository.save(banco);
+        return BancoConverter.converterParaResponse(bancoRepository.save(banco));
     }
-    public Iterable<Banco> findAll(){
+    public Iterable<ResponseBancoDTO> findAll(){
 
-        return bancoRepository.findAll();
+        return BancoConverter.converterParaResponse(bancoRepository.findAll());
     }
     public Optional<Banco> findById(Long id){
-        return bancoRepository.findById(id);
+
+        return BancoConverter.converterParaResponse (bancoRepository.findById(id));
     }
 }
