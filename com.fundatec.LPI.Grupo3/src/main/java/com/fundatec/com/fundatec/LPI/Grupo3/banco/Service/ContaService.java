@@ -8,6 +8,7 @@ import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ClienteRepository;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Repository.ContaRepository;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Cliente;
 import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Enum.StatusDaConta;
+import org.springframework.stereotype.Service;
 
 
 import java.math.BigDecimal;
@@ -38,14 +39,8 @@ public class ContaService {
         return contaRepository.findAll();
     }
     public Optional<Conta> findById(Long id){
-        return contaRepository.findById(id);
-    }
-    public Conta criarUmaNovaConta(Conta conta, Long id){
-        Banco banco = bancoService.findById(id);
-        Cliente cliente = clienteService.findById(id).get();
-        // Como prosseguir daqui?
 
-        return contaRepository.save(conta);
+        return contaRepository.findById(id);
     }
 
     public Conta findByCpf(String cpf) {
@@ -83,21 +78,15 @@ public class ContaService {
 
     //Criar conta
     public Conta criar(Conta conta){
-    return contaRepository.save(conta);
+        return contaRepository.save(conta);
     }
     //Verificar Conta
     public Conta verficarConta(Long id){
-
     return contaRepository.findById(id).get();
     }
-    //Extrato Conta
-    public List <Movimentacao> extratoConta(Long id){
-        Conta conta = verficarConta(id);
-        return movimentacaoService.buscarContas(conta);
-    }
+
     public Conta buscarSaldo(Long id){
-
-    return contaRepository.findById(id).get();
+        return contaRepository.findById(id).get();
     }
     //Consultar Saldo
     public BigDecimal consultarSaldo(Conta conta){

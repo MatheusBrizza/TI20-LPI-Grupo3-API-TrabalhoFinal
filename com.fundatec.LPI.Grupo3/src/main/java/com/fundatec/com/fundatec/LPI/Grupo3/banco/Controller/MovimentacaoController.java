@@ -18,27 +18,27 @@ public class MovimentacaoController {
     @Autowired
     private MovimentacaoService movimentacaoService;
     //Salva Deposito
-    @RequestMapping(method = RequestMethod.POST, path = "salvar")
+    @RequestMapping(method = RequestMethod.POST, path = "/")
     public ResponseEntity<Conta> depositar(@RequestBody Movimentacao movimentacao){
         Movimentacao movimentacao = this.movimentacaoService.salvar(movimentacao);
         return new ResponseEntity<>(movimentacao, HttpStatus.OK);
     }
     //Deleta valor
-    @RequestMapping(method = RequestMethod.DELETE, path = "deletar/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     public ResponseEntity <Conta> saldo (@PathVariable Long id){
         this.movimentacaoService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     //Lista Transações
-    @RequestMapping(method = RequestMethod.GET, path = "listar")
+    @RequestMapping(method = RequestMethod.GET, path = "/")
     public ResponseEntity <?> listar(){
-        List<Movimentacao> movimentacao = this.movimentacaoService.listar();
+        Iterable<Movimentacao> movimentacao = this.movimentacaoService.listar();
         return new ResponseEntity<>(movimentacao, HttpStatus.OK);
     }
 
     //Buscar pelo id
-    @RequestMapping(method = RequestMethod.GET, path = "buscar/{id}")
+    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public ResponseEntity<?> buscarPorId(@PathVariable Long id){
         movimentacaoService.buscarPeloId(id);
         return new ResponseEntity<>(HttpStatus.OK);

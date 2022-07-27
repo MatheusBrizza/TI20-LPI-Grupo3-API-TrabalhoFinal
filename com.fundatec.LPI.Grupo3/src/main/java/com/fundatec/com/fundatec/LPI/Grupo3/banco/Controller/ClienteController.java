@@ -30,7 +30,7 @@ public class ClienteController {
         return clienteService.findAll();
     }
     // Buscar
-    @GetMapping
+    @GetMapping("/{id}")
     public ResponseEntity<Cliente> buscarClientePorId(@PathVariable Long id){
         return clienteRepository.findById(id)
                 .map(ResponseEntity::ok)
@@ -54,7 +54,7 @@ public class ClienteController {
         clienteService.salvarCliente(clienteParaAtualizar);
         return ResponseEntity.ok(clienteParaAtualizar);
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> remover(@PathVariable Long id){
         if (!clienteRepository.existsById(id)) {
             return ResponseEntity.notFound().build();

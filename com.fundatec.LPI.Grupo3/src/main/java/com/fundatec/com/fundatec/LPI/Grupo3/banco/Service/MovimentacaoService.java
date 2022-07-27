@@ -29,7 +29,7 @@ public class MovimentacaoService {
         return movimentacaoRepository.save(movimentacao);
     }
 
-    public List<Movimentacao> listar() {
+    public Iterable<Movimentacao> listar() {
 
         return movimentacaoRepository.findAll();
     }
@@ -40,7 +40,7 @@ public class MovimentacaoService {
     }
 
     public List<Movimentacao> findByConta(Conta conta) {
-        movimentacaoRepository.findByConta(conta);
+       return movimentacaoRepository.findByConta(conta);
     }
 
     public List<Movimentacao> buscarContas(Conta conta) {

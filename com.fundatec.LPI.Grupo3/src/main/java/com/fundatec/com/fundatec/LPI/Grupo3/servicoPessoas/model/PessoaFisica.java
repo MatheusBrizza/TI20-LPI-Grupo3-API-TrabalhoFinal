@@ -1,40 +1,30 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model;
-/*
-<<<<<<< HEAD:com.fundatec.LPI.Grupo3/src/main/java/com/fundatec/com/fundatec/LPI/Grupo3/banco/repository/servicoPessoas/model/PessoaFisica.java
-<<<<<<<< HEAD:com.fundatec.LPI.Grupo3/src/main/java/com/fundatec/com/fundatec/LPI/Grupo3/banco/repository/servicoPessoas/model/PessoaFisica.java
-package com.fundatec.com.fundatec.LPI.Grupo3.banco.repository.servicoPessoas.model;
-========
-package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model;
->>>>>>>> ad3bde725c4ab75809d7bea62134f77b7989a998:com.fundatec.LPI.Grupo3/src/main/java/com/fundatec/com/fundatec/LPI/Grupo3/banco/repository/servicoPessoas/model/PessoaJuridica.java
+
+
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-@Entity
-<<<<<<<< HEAD:com.fundatec.LPI.Grupo3/src/main/java/com/fundatec/com/fundatec/LPI/Grupo3/banco/repository/servicoPessoas/model/PessoaFisica.java
-public class PessoaFisica extends Pessoa {
-========
-public class PessoaJuridica extends Pessoa {
->>>>>>>> ad3bde725c4ab75809d7bea62134f77b7989a998:com.fundatec.LPI.Grupo3/src/main/java/com/fundatec/com/fundatec/LPI/Grupo3/banco/repository/servicoPessoas/model/PessoaJuridica.java
-
-=======
-package com.fundatec.com.fundatec.LPI.Grupo3.servicoPessoas.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Data
+@Table(name = "pessoa_fisica")
 public class PessoaFisica extends Pessoa {
->>>>>>> ad3bde725c4ab75809d7bea62134f77b7989a998:com.fundatec.LPI.Grupo3/src/main/java/com/fundatec/com/fundatec/LPI/Grupo3/servicoPessoas/model/PessoaFisica.java
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_pessoa;
 
-<<<<<<< HEAD:com.fundatec.LPI.Grupo3/src/main/java/com/fundatec/com/fundatec/LPI/Grupo3/banco/repository/servicoPessoas/model/PessoaFisica.java
-
-=======
     @NotNull
     @Column(name = "nome")
     private String nome;
@@ -59,6 +49,4 @@ public class PessoaFisica extends Pessoa {
     @NotNull
     @Column(name = "Especialidade")
     private Integer especialidade;
->>>>>>> ad3bde725c4ab75809d7bea62134f77b7989a998:com.fundatec.LPI.Grupo3/src/main/java/com/fundatec/com/fundatec/LPI/Grupo3/servicoPessoas/model/PessoaFisica.java
 }
-*/
