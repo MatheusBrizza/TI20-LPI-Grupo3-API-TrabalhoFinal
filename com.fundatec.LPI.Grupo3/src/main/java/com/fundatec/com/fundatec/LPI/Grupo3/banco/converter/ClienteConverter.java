@@ -8,7 +8,7 @@ public class ClienteConverter {
         ResponseClienteDTO responseClienteDTO= new ResponseClienteDTO();
         responseClienteDTO.setNome(cliente.getNome());
         responseClienteDTO.setCpf(cliente.getCpf());
-        responseClienteDTO.setResponseEnderecoDTO(cliente.getEndereco());
+        responseClienteDTO.setEndereco(cliente.getEndereco());
         return responseClienteDTO;
     }
 }

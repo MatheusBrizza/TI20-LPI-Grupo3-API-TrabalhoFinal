@@ -21,15 +21,8 @@ public class EnderecoController {
     }
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.FOUND)
-    public ResponseEntity<Endereco> findById(@PathVariable("id") Long id){
-        Endereco endereco = enderecoService.findById(id);
+    public ResponseEntity<Endereco> findById(@PathVariable("id") Long id) {
+        Endereco endereco = enderecoService.findById(id).get();
         return ResponseEntity.ok(endereco);
-    }
-
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<Endereco> criarNovoEndereco(@RequestBody Endereco endereco){
-        return ResponseEntity.status(HttpStatus.CREATED)
-                // Como prosseguir?
     }
 }

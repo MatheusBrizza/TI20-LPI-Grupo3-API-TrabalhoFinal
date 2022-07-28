@@ -81,7 +81,7 @@ public class Conta {
     public void gerarSaldoPoupanca(){
         if (this.tiposDeContas.equals(TiposDeContas.CONTA_POUPANÇA)){
             LocalDate dataMovimentacao = LocalDate.now();
-            long diferencaTempoEntreMovimentacoes = DAYS.between(dataMovimentacao, dataUltimaMovimentacao);
+            Integer diferencaTempoEntreMovimentacoes = DAYS.between(dataMovimentacao, dataUltimaMovimentacao);
             BigDecimal saldoAtual = this.saldo.multiply(BigDecimal.valueOf(this.tiposDeContas.getSaldo)));
             dataUltimaMovimentacao = dataMovimentacao;
         }

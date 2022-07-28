@@ -1,6 +1,8 @@
 package com.fundatec.com.fundatec.LPI.Grupo3.banco.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Cliente;
+import com.fundatec.com.fundatec.LPI.Grupo3.banco.Model.Enum.StatusDaConta;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -15,9 +17,7 @@ import java.util.List;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseContaDTO {
-    private Long id;
-    private String cpf;
-    private ResponseBancoDTO banco;
-    private List<ResponseMovimentacaoDTO> movimentacaoList;
+    private StatusDaConta statusDaConta;
+    private Cliente cliente;
     private BigDecimal saldo;
 }
